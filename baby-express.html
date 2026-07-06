@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בייבי אקספרס – קונים חכם לתינוקות</title>
+
+  <!-- ================================================
+       הכנה לפיקסלים – הדבק כאן את קוד הפיקסל שלך
+       (Meta Pixel / Google Tag / כל פיקסל אחר)
+       ================================================ -->
+  <!-- META PIXEL CODE START -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1042992805051567');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1042992805051567&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- META PIXEL CODE END -->
+
+  <!-- GOOGLE TAG (gtag.js) START -->
+  <!-- הדבק כאן את קוד ה-Google Tag שלך -->
+  <!-- GOOGLE TAG CODE END -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ── Base ── */
+    :root {
+      --base-font-size: 16px;
+      --color-brand-pink: #f472b6;
+      --color-brand-soft: #fdf2f8;
+      --color-brand-deep: #9d174d;
+    }
+
+    html { font-size: var(--base-font-size); scroll-behavior: smooth; }
+    body { font-family: 'Heebo', sans-serif; background: #fffbfe; color: #1e1e2e; }
+
+    /* ── Hero overlay ── */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.55) 100%);
+    }
+
+    /* ── Accessibility – high contrast ── */
+    body.high-contrast { background: #000 !important; color: #fff !important; }
+    body.high-contrast * { background-color: inherit; color: inherit; border-color: #fff; }
+    body.high-contrast a { color: #ff0 !important; }
+
+    /* ── Accessibility – monochrome ── */
+    body.monochrome { filter: grayscale(100%); }
+
+    /* ── Accessibility – highlight links ── */
+    body.highlight-links a {
+      text-decoration: underline !important;
+      text-decoration-thickness: 3px !important;
+      text-underline-offset: 3px !important;
+      font-weight: 700 !important;
+    }
+
+    /* ── Accessibility – stop animations ── */
+    body.no-animations *, body.no-animations *::before, body.no-animations *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* ── Accessibility – readable font ── */
+    body.readable-font, body.readable-font * {
+      font-family: Arial, Helvetica, sans-serif !important;
+    }
+
+    /* ── Accessibility – keyboard nav ── */
+    body.keyboard-nav *:focus {
+      outline: 3px solid #f59e0b !important;
+      outline-offset: 3px !important;
+      box-shadow: 0 0 0 5px rgba(245,158,11,.35) !important;
+    }
+
+    /* ── Accessibility menu panel ── */
+    #a11y-menu {
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    #a11y-menu.hidden { opacity: 0; pointer-events: none; transform: translateY(8px); }
+    #a11y-menu:not(.hidden) { opacity: 1; transform: translateY(0); }
+
+    /* ── Pulse on CTA button ── */
+    @keyframes pulse-btn {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,.5); }
+      50%       { box-shadow: 0 0 0 14px rgba(220,38,38,0); }
+    }
+    .cta-pulse { animation: pulse-btn 2.2s infinite; }
+
+    /* ── Modal ── */
+    #a11y-modal { transition: opacity .2s ease; }
+    #a11y-modal.hidden { opacity: 0; pointer-events: none; }
+
+    /* ── Section soft divider ── */
+    .wave-divider { line-height: 0; }
+    .wave-divider svg { display: block; }
+  </style>
+</head>
+
+<body>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  SKIP LINK (נגישות)                         ║
+     ╚══════════════════════════════════════════════╝ -->
+<a href="#main-content"
+   class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:right-2 focus:z-50 focus:bg-yellow-400 focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+   aria-label="דלג לתוכן הראשי">
+  דלג לתוכן
+</a>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  1. HERO SECTION                             ║
+     ╚══════════════════════════════════════════════╝ -->
+<header id="main-content" role="banner">
+  <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background image (Unsplash placeholder) -->
+    <img
+      src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=1600&q=80"
+      alt="תינוק מחייך מוקף באהבה וטיפול"
+      class="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="false"
+    />
+
+    <!-- Overlay -->
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <p class="text-pink-300 font-bold tracking-widest text-sm md:text-base uppercase mb-4 drop-shadow">
+        🍼 קהילת הורים חכמה
+      </p>
+
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4 drop-shadow-lg">
+        בייבי אקספרס
+        <span class="block text-pink-300">קונים חכם לתינוקות</span>
+      </h1>
+
+      <h2 class="text-lg md:text-xl text-white/90 font-medium mb-10 drop-shadow leading-relaxed max-w-xl mx-auto">
+        דילים מסוננים מאלי אקספרס – איכות בראש שקט ובמחיר שעושה טוב בכיס
+      </h2>
+
+      <!-- CTA Button -->
+      <a
+        id="whatsapp-cta"
+        href="https://chat.whatsapp.com/EACdDu5zfDoI7pvn8F5fBN"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-pulse inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-black text-xl md:text-2xl px-10 py-5 rounded-full transition-transform duration-150 select-none"
+        aria-label="להצטרפות לקהילת הוואטסאפ של בייבי אקספרס"
+        role="button"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.557 4.118 1.529 5.849L.057 23.886l6.196-1.624A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.214-3.724.977.993-3.63-.235-.374A9.818 9.818 0 1112 21.818z"/>
+        </svg>
+        להצטרפות לחצו כאן
+      </a>
+
+      <p class="text-white/60 text-sm mt-5">הצטרפו בחינם · ללא התחייבות</p>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-sm flex flex-col items-center gap-1 animate-bounce" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- Wave divider -->
+<div class="wave-divider bg-transparent" aria-hidden="true">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:60px;width:100%">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fffbfe"/>
+  </svg>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  2. ABOUT / VALUE SECTION                    ║
+     ╚══════════════════════════════════════════════╝ -->
+<main>
+<section aria-labelledby="about-heading" class="py-20 px-6 bg-[#fffbfe]">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+      <!-- Image (right in RTL = appears first in DOM for visual right) -->
+      <div class="order-1 md:order-1 rounded-3xl overflow-hidden shadow-xl">
+        <img
+          src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80"
+          alt="מגוון מוצרי תינוקות וצעצועים צבעוניים"
+          class="w-full h-72 md:h-96 object-cover"
+        />
+      </div>
+
+      <!-- Text (left in RTL = second column) -->
+      <div class="order-2 md:order-2 space-y-5">
+        <h2 id="about-heading" class="text-3xl md:text-4xl font-black text-pink-700 leading-snug">
+          ✨ הגיע הזמן לקנות חכם
+        </h2>
+
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          💖 תכירו את בייבי אקספרס – הקהילה שמביאה לכן את השילוב המושלם בין איכות לחיסכון.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          🛒 אנחנו כאן כדי למצוא עבורכן את הדילים הכי שווים ב-Ali Express. כל מוצר, צעצוע או בגד עובר סינון המבוסס על המלצות ודירוגים גבוהים בלבד.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          ✅ בשבילכן זה אומר ראש שקט, קנייה בטוחה ומקסימום תמורה למחיר.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          🥰 זו קהילה של אמהות שאוהבות לפנק את הבייבי שלהן, מבלי לקרוע את הכיס.
+        </p>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed font-bold">
+          🛍️ הצטרפו לבייבי אקספרס ותתחילו לחגוג את הקניות שלכן כבר היום! 🚀
+        </p>
+
+        <a
+          id="whatsapp-cta-about"
+          href="https://chat.whatsapp.com/EACdDu5zfDoI7pvn8F5fBN"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-4 bg-red-600 hover:bg-red-700 text-white font-black text-lg px-8 py-4 rounded-full transition-colors duration-200"
+          aria-label="להצטרפות לקהילת הוואטסאפ"
+        >
+          אני רוצה להצטרף! →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section aria-label="יתרונות הקהילה" class="bg-pink-50 py-12 px-6">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div class="space-y-2">
+      <div class="text-4xl" aria-hidden="true">🔍</div>
+      <h3 class="font-bold text-pink-700 text-lg">סינון קפדני</h3>
+      <p class="text-gray-600 text-sm">רק מוצרים עם דירוגים גבוהים ומאות ביקורות חיוביות</p>
+    </div>
+    <div class="space-y-2">
+      <div class="text-4xl" aria-hidden="true">💰</div>
+      <h3 class="font-bold text-pink-700 text-lg">מחירים שמפתיעים</h3>
+      <p class="text-gray-600 text-sm">דילים בלעדיים שתמצאו רק אצלנו, לפני כולם</p>
+    </div>
+    <div class="space-y-2">
+      <div class="text-4xl" aria-hidden="true">👩‍👧</div>
+      <h3 class="font-bold text-pink-700 text-lg">קהילה של אמהות</h3>
+      <p class="text-gray-600 text-sm">אמהות שחולקות ניסיון, ממליצות ותומכות</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  3. FOOTER                                   ║
+     ╚══════════════════════════════════════════════╝ -->
+<footer role="contentinfo" class="bg-pink-900 text-white py-10 px-6 text-center">
+  <p class="text-pink-200 text-sm mb-2">© 2025 בייבי אקספרס · כל הזכויות שמורות</p>
+  <p class="text-pink-300 text-sm mb-4">
+    לפניות:
+    <a href="mailto:Miryaniv2024@gmail.com" class="underline hover:text-white" aria-label="שלח מייל לנגישות">
+      Miryaniv2024@gmail.com
+    </a>
+  </p>
+  <button
+    id="open-a11y-modal"
+    class="text-pink-300 underline text-sm hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-300 rounded"
+    aria-haspopup="dialog"
+    aria-controls="a11y-modal"
+  >
+    הצהרת נגישות
+  </button>
+</footer>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  ACCESSIBILITY MODAL                         ║
+     ╚══════════════════════════════════════════════╝ -->
+<div
+  id="a11y-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+  class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+>
+  <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative max-h-[85vh] overflow-y-auto" dir="rtl">
+    <button
+      id="close-a11y-modal"
+      class="absolute top-4 left-4 text-gray-400 hover:text-gray-700 text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-pink-500 rounded"
+      aria-label="סגור הצהרת נגישות"
+    >×</button>
+
+    <h2 id="modal-title" class="text-2xl font-black text-pink-700 mb-4">הצהרת נגישות</h2>
+
+    <p class="text-gray-700 text-sm leading-relaxed mb-3">
+      אתר <strong>בייבי אקספרס</strong> פועל לפי הנחיות תקן ישראלי <strong>ת"י 5568</strong> (המבוסס על WCAG 2.1), ברמת התאמה <strong>AA</strong>, בהתאם לדרישות <strong>חוק שוויון זכויות לאנשים עם מוגבלות (התשנ"ח–1998)</strong> ותקנות הנגישות לאתרי אינטרנט.
+    </p>
+    <p class="text-gray-700 text-sm leading-relaxed mb-3">
+      האתר כולל: תמיכה בכיוון RTL, תגיות ARIA מלאות, ניגודיות צבעים תקנית, תמיכה בניווט מקלדת, טקסט חלופי לתמונות, ותפריט נגישות המאפשר שינויי הצגה.
+    </p>
+    <p class="text-gray-700 text-sm leading-relaxed mb-3">
+      מצאתם בעיית נגישות? נשמח לשמוע ולתקן. פנו אלינו:
+    </p>
+    <p class="font-bold text-pink-700 text-sm mb-3">
+      📧 <a href="mailto:Miryaniv2024@gmail.com" class="underline">Miryaniv2024@gmail.com</a>
+    </p>
+    <p class="text-gray-500 text-xs">הצהרה זו עודכנה בשנת 2025.</p>
+
+    <button
+      id="close-a11y-modal-btn"
+      class="mt-6 w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-xl transition-colors"
+    >
+      סגור
+    </button>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  FLOATING ACCESSIBILITY BUTTON + MENU        ║
+     ╚══════════════════════════════════════════════╝ -->
+
+<!-- Toggle button -->
+<button
+  id="a11y-toggle"
+  aria-label="פתח תפריט נגישות"
+  aria-haspopup="true"
+  aria-expanded="false"
+  aria-controls="a11y-menu"
+  class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-pink-700 hover:bg-pink-800 text-white shadow-2xl flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-pink-400"
+>
+  <!-- Accessibility icon (wheelchair) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="12" cy="4" r="2"/>
+    <path d="M19 13h-4l-1.5-4H9a2 2 0 00-1.9 1.4L5.5 17H8l1.2-3.2.8 2.2v4h2v-4.5l-.8-2.5H14l1 3H19v-3z"/>
+    <path d="M9 20a4 4 0 01-4-4H3a6 6 0 006 6v-2z"/>
+  </svg>
+</button>
+
+<!-- Accessibility Menu Panel -->
+<div
+  id="a11y-menu"
+  role="menu"
+  aria-label="תפריט נגישות"
+  class="hidden fixed bottom-24 left-6 z-40 bg-white rounded-2xl shadow-2xl w-64 p-4 border border-pink-100"
+>
+  <h3 class="text-pink-700 font-black text-sm mb-3 border-b border-pink-100 pb-2">♿ נגישות</h3>
+
+  <div class="space-y-1.5" role="group">
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="font-increase" role="menuitem" aria-label="הגדל גודל טקסט">
+      <span aria-hidden="true">A+</span> הגדל טקסט
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="font-decrease" role="menuitem" aria-label="הקטן גודל טקסט">
+      <span aria-hidden="true">A-</span> הקטן טקסט
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="high-contrast" role="menuitem" aria-pressed="false" aria-label="הפעל ניגודיות גבוהה">
+      <span aria-hidden="true">◑</span> ניגודיות גבוהה
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="monochrome" role="menuitem" aria-pressed="false" aria-label="הפעל מצב גוני אפור">
+      <span aria-hidden="true">◐</span> גוני אפור
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="screen-reader" role="menuitem" aria-pressed="false" aria-label="התאמה לקורא מסך">
+      <span aria-hidden="true">👁</span> קורא מסך
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="highlight-links" role="menuitem" aria-pressed="false" aria-label="הדגש קישורים">
+      <span aria-hidden="true">🔗</span> הדגש קישורים
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="no-animations" role="menuitem" aria-pressed="false" aria-label="עצור אנימציות">
+      <span aria-hidden="true">⏸</span> עצור אנימציות
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="readable-font" role="menuitem" aria-pressed="false" aria-label="החלף לפונט קריא">
+      <span aria-hidden="true">𝗙</span> פונט קריא
+    </button>
+
+    <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-pink-50 text-sm text-gray-700 flex items-center gap-2 transition-colors"
+            data-action="keyboard-nav" role="menuitem" aria-pressed="false" aria-label="הפעל ניווט מקלדת">
+      <span aria-hidden="true">⌨</span> ניווט מקלדת
+    </button>
+
+    <div class="border-t border-pink-100 pt-2 mt-2">
+      <button class="a11y-btn w-full text-right px-3 py-2.5 rounded-xl hover:bg-red-50 text-sm text-red-600 font-bold flex items-center gap-2 transition-colors"
+              data-action="reset" role="menuitem" aria-label="איפוס כל הגדרות הנגישות">
+        <span aria-hidden="true">↺</span> איפוס מלא
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗
+     ║  JAVASCRIPT                                  ║
+     ╚══════════════════════════════════════════════╝ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Pixel tracking: fire 'Contact' on every WhatsApp CTA click ── */
+  function trackWhatsappContact() {
+    try {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
+      }
+    } catch (e) {
+      // fbq not loaded – silent fail
+    }
+    // Navigation proceeds naturally (href on <a> tag) – no preventDefault used
+  }
+
+  ['whatsapp-cta', 'whatsapp-cta-about'].forEach(function (id) {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', trackWhatsappContact);
+    }
+  });
+
+  /* ── Accessibility state ── */
+  const ROOT = document.documentElement;
+  const BODY = document.body;
+
+  // Font size stepping (in px)
+  const FONT_MIN = 12;
+  const FONT_MAX = 26;
+  const FONT_STEP = 2;
+  let currentFontSize = 16;
+
+  /* Toggle helpers */
+  function addClass(cls)    { BODY.classList.add(cls); }
+  function removeClass(cls) { BODY.classList.remove(cls); }
+  function hasClass(cls)    { return BODY.classList.contains(cls); }
+
+  /* ── Toggle button & menu ── */
+  const toggleBtn = document.getElementById('a11y-toggle');
+  const menu      = document.getElementById('a11y-menu');
+
+  toggleBtn.addEventListener('click', function () {
+    const isOpen = !menu.classList.contains('hidden');
+    if (isOpen) {
+      menu.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      menu.classList.remove('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      // Focus first menu button
+      const first = menu.querySelector('.a11y-btn');
+      if (first) first.focus();
+    }
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && e.target !== toggleBtn) {
+      menu.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Keyboard: Escape closes menu
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.focus();
+    }
+  });
+
+  /* ── Action handlers ── */
+  function setFontSize(size) {
+    currentFontSize = Math.min(FONT_MAX, Math.max(FONT_MIN, size));
+    ROOT.style.fontSize = currentFontSize + 'px';
+  }
+
+  function toggleBodyClass(cls, btn) {
+    if (hasClass(cls)) {
+      removeClass(cls);
+      btn.setAttribute('aria-pressed', 'false');
+    } else {
+      addClass(cls);
+      btn.setAttribute('aria-pressed', 'true');
+    }
+  }
+
+  function applyScreenReader() {
+    const btn = document.querySelector('[data-action="screen-reader"]');
+    const isOn = btn.getAttribute('aria-pressed') === 'true';
+
+    if (isOn) {
+      // Remove dynamic aria-labels we added
+      document.querySelectorAll('[data-a11y-label]').forEach(function (el) {
+        el.removeAttribute('aria-label');
+        el.removeAttribute('data-a11y-label');
+      });
+      btn.setAttribute('aria-pressed', 'false');
+    } else {
+      // Add aria-labels to images lacking them
+      document.querySelectorAll('img:not([alt])').forEach(function (img) {
+        img.setAttribute('aria-label', 'תמונה');
+        img.setAttribute('data-a11y-label', '1');
+      });
+      // Add aria-label to links missing text
+      document.querySelectorAll('a:not([aria-label])').forEach(function (a) {
+        if (!a.textContent.trim()) {
+          a.setAttribute('aria-label', 'קישור');
+          a.setAttribute('data-a11y-label', '1');
+        }
+      });
+      btn.setAttribute('aria-pressed', 'true');
+    }
+  }
+
+  function resetAll() {
+    // Font
+    currentFontSize = 16;
+    ROOT.style.fontSize = '16px';
+    // Classes
+    ['high-contrast','monochrome','highlight-links','no-animations','readable-font','keyboard-nav'].forEach(removeClass);
+    // aria-pressed
+    document.querySelectorAll('.a11y-btn[aria-pressed]').forEach(function (b) {
+      b.setAttribute('aria-pressed', 'false');
+    });
+    // Screen reader additions
+    document.querySelectorAll('[data-a11y-label]').forEach(function (el) {
+      el.removeAttribute('aria-label');
+      el.removeAttribute('data-a11y-label');
+    });
+  }
+
+  /* ── Wire up all menu buttons ── */
+  document.querySelectorAll('.a11y-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const action = btn.getAttribute('data-action');
+
+      switch (action) {
+        case 'font-increase':
+          setFontSize(currentFontSize + FONT_STEP);
+          break;
+        case 'font-decrease':
+          setFontSize(currentFontSize - FONT_STEP);
+          break;
+        case 'high-contrast':
+          // Mutually exclusive with monochrome
+          if (hasClass('monochrome')) removeClass('monochrome');
+          toggleBodyClass('high-contrast', btn);
+          break;
+        case 'monochrome':
+          if (hasClass('high-contrast')) removeClass('high-contrast');
+          toggleBodyClass('monochrome', btn);
+          break;
+        case 'screen-reader':
+          applyScreenReader();
+          break;
+        case 'highlight-links':
+          toggleBodyClass('highlight-links', btn);
+          break;
+        case 'no-animations':
+          toggleBodyClass('no-animations', btn);
+          break;
+        case 'readable-font':
+          toggleBodyClass('readable-font', btn);
+          break;
+        case 'keyboard-nav':
+          toggleBodyClass('keyboard-nav', btn);
+          break;
+        case 'reset':
+          resetAll();
+          break;
+      }
+    });
+  });
+
+  /* ── Accessibility Modal ── */
+  const modal        = document.getElementById('a11y-modal');
+  const openModalBtn = document.getElementById('open-a11y-modal');
+  const closeModalX  = document.getElementById('close-a11y-modal');
+  const closeModalBtn= document.getElementById('close-a11y-modal-btn');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    modal.style.opacity = '1';
+    closeModalX.focus();
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    openModalBtn.focus();
+  }
+
+  openModalBtn.addEventListener('click', openModal);
+  closeModalX.addEventListener('click', closeModal);
+  closeModalBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+}());
+</script>
+
+</body>
+</html>
