@@ -10,7 +10,23 @@
        (Meta Pixel / Google Tag / כל פיקסל אחר)
        ================================================ -->
   <!-- META PIXEL CODE START -->
-  <!-- הדבק כאן את קוד ה-Meta Pixel שלך -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1042992805051567');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1042992805051567&ev=PageView&noscript=1"
+    />
+  </noscript>
   <!-- META PIXEL CODE END -->
 
   <!-- GOOGLE TAG (gtag.js) START -->
@@ -216,6 +232,7 @@
         </p>
 
         <a
+          id="whatsapp-cta-about"
           href="https://chat.whatsapp.com/EACdDu5zfDoI7pvn8F5fBN"
           target="_blank"
           rel="noopener noreferrer"
@@ -409,20 +426,24 @@
 (function () {
   'use strict';
 
-  /* ── Pixel tracking ── */
-  const whatsappCta = document.getElementById('whatsapp-cta');
-  if (whatsappCta) {
-    whatsappCta.addEventListener('click', function () {
-      try {
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
-        }
-      } catch (e) {
-        // fbq not loaded – silent fail
+  /* ── Pixel tracking: fire 'Contact' on every WhatsApp CTA click ── */
+  function trackWhatsappContact() {
+    try {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact');
       }
-      // Navigation proceeds naturally (href on <a> tag)
-    });
+    } catch (e) {
+      // fbq not loaded – silent fail
+    }
+    // Navigation proceeds naturally (href on <a> tag) – no preventDefault used
   }
+
+  ['whatsapp-cta', 'whatsapp-cta-about'].forEach(function (id) {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', trackWhatsappContact);
+    }
+  });
 
   /* ── Accessibility state ── */
   const ROOT = document.documentElement;
